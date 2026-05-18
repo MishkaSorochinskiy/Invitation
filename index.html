@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mykhailo &amp; Yana — Wedding · August 23, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rose:       #c0747a;
+      --rose-light: #d4969b;
+      --rose-dark:  #9e5a60;
+      --gold:       #c9a570;
+      --blush:      #f9e4e4;
+      --bg:         #fdf6f0;
+      --text:       #3d2c2c;
+      --text-mid:   #7a5c5c;
+      --text-light: #a88080;
+      --white:      #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.9rem 2rem;
+      background: rgba(253, 246, 240, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(192, 116, 122, 0.14);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--rose); }
+
+    /* ── SHARED ── */
+    section { padding: 5.5rem 1.5rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 3rem;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      margin: 1.4rem 0;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      height: 1px;
+      width: 56px;
+      background: var(--gold);
+      opacity: 0.55;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(155deg, #fceaea 0%, #f5d0d0 42%, #edd9cb 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(192,116,122,0.13) 0%, transparent 68%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -80px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(201,165,112,0.1) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-pretitle {
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 1.6rem;
+    }
+    .hero-names {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3.8rem, 13vw, 8.5rem);
+      font-weight: 700;
+      color: var(--rose-dark);
+      line-height: 1;
+      text-shadow: 0 2px 24px rgba(158, 90, 96, 0.18);
+    }
+    .hero-amp {
+      display: block;
+      font-size: clamp(2.2rem, 7vw, 5.2rem);
+      color: var(--gold);
+      line-height: 0.85;
+      margin: 0.05em 0;
+    }
+    .hero-date {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: var(--text-mid);
+      letter-spacing: 0.14em;
+      margin-top: 1.4rem;
+      font-style: italic;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-light);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    .hero-scroll::after { content: '↓'; font-size: 0.9rem; }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* ── DETAILS ── */
+    #details { background: var(--white); }
+    .detail-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .detail-card {
+      text-align: center;
+      padding: 2.2rem 1.5rem;
+      border: 1px solid rgba(192,116,122,0.16);
+      border-radius: 14px;
+      background: linear-gradient(140deg, #fff 55%, #fdf0f0 100%);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .detail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(192,116,122,0.13);
+    }
+    .detail-icon { font-size: 2.1rem; display: block; margin-bottom: 1rem; }
+    .detail-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+    .detail-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .detail-sub {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+
+    /* ── TIMELINE ── */
+    #timeline {
+      background: linear-gradient(175deg, #fdf6f0 0%, #f9e8e8 55%, #fdf6f0 100%);
+    }
+    .timeline { position: relative; padding: 0.5rem 0; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold) 8%, var(--gold) 92%, transparent);
+      transform: translateX(-50%);
+    }
+    .tl-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: calc(50% + 2.8rem);
+      margin-bottom: 2.8rem;
+      position: relative;
+    }
+    .tl-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 2.8rem);
+    }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: var(--rose);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--rose-light);
+    }
+    .tl-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.2rem 1.6rem;
+      box-shadow: 0 4px 18px rgba(192,116,122,0.1);
+      max-width: 290px;
+      width: 100%;
+    }
+    .tl-time {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .tl-event {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    .tl-desc {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      margin-top: 0.2rem;
+    }
+
+    /* ── LOCATION ── */
+    #location { background: var(--white); }
+    .map-wrap {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.1);
+      margin-bottom: 1.8rem;
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 390px;
+      border: none;
+      display: block;
+    }
+    .map-actions { text-align: center; }
+    .btn-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2.2rem;
+      background: var(--rose);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-map:hover { background: var(--rose-dark); transform: translateY(-2px); }
+
+    /* ── RSVP ── */
+    #rsvp {
+      background: linear-gradient(155deg, #fceaea 0%, #f5d0d0 42%, #edd9cb 100%);
+    }
+    .rsvp-box {
+      max-width: 580px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      padding: 2.8rem;
+      box-shadow: 0 8px 36px rgba(192,116,122,0.13);
+    }
+    .form-group { margin-bottom: 1.6rem; }
+    label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 0.78rem 1rem;
+      border: 1px solid rgba(192,116,122,0.24);
+      border-radius: 9px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #fdf8f8;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(192,116,122,0.11);
+    }
+    textarea { resize: vertical; min-height: 95px; }
+
+    .radio-row { display: flex; gap: 1rem; }
+    .radio-opt { flex: 1; }
+    .radio-opt input { display: none; }
+    .radio-opt label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.78rem 0.5rem;
+      border: 1px solid rgba(192,116,122,0.24);
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      background: #fdf8f8;
+      transition: all 0.18s;
+    }
+    .radio-opt input:checked + label {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 0.4rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover  { background: var(--rose-dark); transform: translateY(-2px); }
+    .btn-submit:active { transform: translateY(0); }
+
+    .rsvp-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    .thank-you.show { display: block; }
+    .ty-icon { font-size: 3.2rem; margin-bottom: 1rem; }
+    .thank-you h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--text);
+      margin-bottom: 0.7rem;
+    }
+    .thank-you p { color: var(--text-mid); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: rgba(253,246,240,0.65);
+      text-align: center;
+      padding: 2.8rem 1.5rem;
+    }
+    .footer-names {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    footer p { font-size: 0.78rem; letter-spacing: 0.1em; }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.d1 { transition-delay: 0.12s; }
+    .fade-up.d2 { transition-delay: 0.24s; }
+    .fade-up.d3 { transition-delay: 0.36s; }
+    .fade-up.d4 { transition-delay: 0.48s; }
+    .fade-up.d5 { transition-delay: 0.60s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .detail-cards {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin: 0 auto;
+      }
+      .timeline::before { left: 1.3rem; }
+      .tl-item,
+      .tl-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-right: 0;
+        padding-left: 3.8rem;
+      }
+      .tl-dot { left: 1.3rem; }
+      .tl-card { max-width: 100%; }
+      nav { gap: 1.1rem; padding: 0.7rem 1rem; }
+      nav a { font-size: 0.68rem; letter-spacing: 0.12em; }
+      .rsvp-box { padding: 1.8rem 1.2rem; }
+      .map-wrap iframe { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#details">Details</a>
+  <a href="#timeline">Schedule</a>
+  <a href="#location">Location</a>
+  <a href="#rsvp">RSVP</a>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <p class="hero-pretitle">You are invited to the wedding of</p>
+  <div class="hero-names">
+    Mykhailo
+    <span class="hero-amp">&amp;</span>
+    Yana
+  </div>
+  <div class="divider">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 1 L11.5 7.5 L18 10 L11.5 12.5 L10 19 L8.5 12.5 L2 10 L8.5 7.5 Z" fill="#c9a570" opacity="0.8"/>
+    </svg>
+  </div>
+  <p class="hero-date">Sunday, the 23rd of August, 2026</p>
+  <span class="hero-scroll">Scroll</span>
+</section>
+
+
+<!-- ═══ CEREMONY DETAILS ═══ -->
+<section id="details">
+  <div class="container">
+    <span class="section-label">The Day</span>
+    <h2 class="section-title">Ceremony Details</h2>
+    <div class="detail-cards">
+
+      <div class="detail-card fade-up">
+        <span class="detail-icon">🗓</span>
+        <div class="detail-label">Date</div>
+        <div class="detail-value">Sunday<br>August 23, 2026</div>
+      </div>
+
+      <div class="detail-card fade-up d1">
+        <span class="detail-icon">🕓</span>
+        <div class="detail-label">Time</div>
+        <div class="detail-value">4:00 PM</div>
+        <div class="detail-sub">Doors open at 3:30 PM</div>
+      </div>
+
+      <div class="detail-card fade-up d2">
+        <span class="detail-icon">📍</span>
+        <div class="detail-label">Venue</div>
+        <div class="detail-value">God Bless You</div>
+        <div class="detail-sub">Ivano-Frankivsk region, Ukraine</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ TIMELINE ═══ -->
+<section id="timeline">
+  <div class="container">
+    <span class="section-label">Program</span>
+    <h2 class="section-title">Day Schedule</h2>
+    <div class="timeline">
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-time">3:30 PM</div>
+          <div class="tl-event">Guest Arrival</div>
+          <div class="tl-desc">Welcome drinks &amp; mingling</div>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up d1">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-time">4:00 PM</div>
+          <div class="tl-event">Ceremony</div>
+          <div class="tl-desc">Exchange of vows &amp; rings</div>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up d2">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-time">5:00 PM</div>
+          <div class="tl-event">Photo Session</div>
+          <div class="tl-desc">Family &amp; couple portraits</div>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up d3">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-time">5:30 PM</div>
+          <div class="tl-event">Cocktail Hour</div>
+          <div class="tl-desc">Light bites &amp; drinks</div>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up d4">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-time">7:00 PM</div>
+          <div class="tl-event">Dinner &amp; Celebration</div>
+          <div class="tl-desc">Feast, music &amp; dancing</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ LOCATION ═══ -->
+<section id="location">
+  <div class="container">
+    <span class="section-label">Find Us</span>
+    <h2 class="section-title">Location</h2>
+    <div class="map-wrap fade-up">
+      <iframe
+        src="https://maps.google.com/maps?q=48.848359,24.83144&output=embed&z=16"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Venue location">
+      </iframe>
+    </div>
+    <div class="map-actions fade-up d1">
+      <a href="https://maps.app.goo.gl/XbEKXQdFto6DFDTn8" target="_blank" rel="noopener noreferrer" class="btn-map">
+        📍 &nbsp;Open in Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ RSVP ═══ -->
+<section id="rsvp">
+  <div class="container">
+    <span class="section-label">Join Us</span>
+    <h2 class="section-title">RSVP</h2>
+    <div class="rsvp-box fade-up">
+
+      <form id="rsvpForm">
+        <div class="form-group">
+          <label for="name">Your Full Name</label>
+          <input type="text" id="name" placeholder="First &amp; last name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Will you attend?</label>
+          <div class="radio-row">
+            <div class="radio-opt">
+              <input type="radio" name="attending" id="yes" value="yes" required>
+              <label for="yes">🥂 Joyfully accepts</label>
+            </div>
+            <div class="radio-opt">
+              <input type="radio" name="attending" id="no" value="no">
+              <label for="no">😔 Regretfully declines</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" id="guestGroup">
+          <label for="guests">Number of Guests (including you)</label>
+          <input type="number" id="guests" min="1" max="10" value="1">
+        </div>
+
+        <div class="form-group">
+          <label for="message">
+            Message to the Couple
+            <span style="font-weight:300;text-transform:none;letter-spacing:0;color:var(--text-light)"> — optional</span>
+          </label>
+          <textarea id="message" placeholder="Share your wishes or any dietary needs…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send RSVP ✉</button>
+        <p class="rsvp-note">Please RSVP by August 1, 2026</p>
+      </form>
+
+      <div class="thank-you" id="thankYou">
+        <div class="ty-icon">💌</div>
+        <h3>Thank you!</h3>
+        <p>We've received your RSVP and<br>can't wait to celebrate with you.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-names">Mykhailo &amp; Yana</div>
+  <p>August 23, 2026 &nbsp;·&nbsp; With all our love</p>
+</footer>
+
+
+<script>
+  // Scroll-reveal animations
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Hide guest count when declining
+  document.querySelectorAll('input[name="attending"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('guestGroup').style.display =
+        r.value === 'no' ? 'none' : 'block';
+    });
+  });
+
+  // RSVP submit
+  document.getElementById('rsvpForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('rsvpForm').style.display = 'none';
+    document.getElementById('thankYou').classList.add('show');
+  });
+</script>
+
+</body>
+</html>
