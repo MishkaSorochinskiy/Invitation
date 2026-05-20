@@ -26,7 +26,6 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 400;
   color: var(--text);
   background: var(--bg);
@@ -56,7 +55,6 @@ nav a {
   letter-spacing: 0.04em;
   text-transform: none;
   font-weight: 400;
-  font-style: italic;
   transition: color 0.2s;
 }
 nav a:hover { color: var(--rose); }
@@ -79,12 +77,10 @@ section {
   text-transform: none;
   color: var(--sec-light-text);
   font-weight: 400;
-  font-style: italic;
   margin-bottom: 0.6rem;
 }
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 400;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   text-align: center;
@@ -141,7 +137,6 @@ section {
 
 .hero-pretitle {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: clamp(0.95rem, 1.7vw, 1.15rem);
   letter-spacing: 0.06em;
   text-transform: none;
@@ -151,7 +146,6 @@ section {
 }
 .hero-names {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: clamp(2.8rem, 8vw, 5.5rem);
   font-weight: 400;
   color: var(--sec-green-text);
@@ -160,7 +154,6 @@ section {
 }
 .hero-amp {
   display: inline;
-  font-style: italic;
   font-weight: 400;
   font-size: clamp(2rem, 5vw, 4rem);
   color: var(--gold);
@@ -171,7 +164,6 @@ section {
   color: var(--sec-green-sub);
   letter-spacing: 0.14em;
   margin-top: 1rem;
-  font-style: italic;
 }
 .hero-message {
   font-family: 'Playfair Display', serif;
@@ -179,7 +171,6 @@ section {
   color: var(--sec-green-sub);
   letter-spacing: 0.14em;
   margin-top: 1.2rem;
-  font-style: italic;
 }
 .hero-photo-wrap {
   margin-top: 1.4rem;
@@ -190,9 +181,9 @@ section {
     0 16px 40px rgba(15,61,38,0.22),
     0 32px 64px rgba(15,61,38,0.18),
     0 2px 6px rgba(0,0,0,0.12);
-  max-width: 480px;
-  width: 90%;
-  max-height: 36vh;
+  max-width: 720px;
+  width: 92%;
+  max-height: 60vh;
 }
 .hero-photo {
   width: 100%;
@@ -214,7 +205,6 @@ section {
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   text-transform: none;
-  font-style: italic;
   animation: bob 2.2s ease-in-out infinite;
 }
 .hero-scroll::after { content: '↓'; font-size: 0.9rem; }
@@ -239,7 +229,6 @@ section {
 .invite-text { padding-right: 1rem; }
 .invite-heading {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 400;
   font-size: clamp(1.6rem, 3.4vw, 2.4rem);
   color: var(--sec-light-text);
@@ -249,7 +238,6 @@ section {
 .invite-heading:empty { display: none; }
 .invite-paragraph {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   color: var(--sec-light-sub);
   line-height: 1.65;
@@ -308,7 +296,6 @@ section {
   text-transform: none;
   color: var(--sec-light-text);
   font-weight: 400;
-  font-style: italic;
   margin-bottom: 0.45rem;
 }
 .detail-value {
@@ -376,12 +363,10 @@ section {
   text-transform: none;
   color: var(--rose);
   font-weight: 400;
-  font-style: italic;
   margin-bottom: 0.25rem;
 }
 .tl-event {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: 1.15rem;
   color: var(--text);
 }
@@ -417,7 +402,6 @@ section {
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 400;
-  font-style: italic;
   letter-spacing: 0.02em;
   transition: background 0.2s, transform 0.2s;
 }
@@ -453,7 +437,6 @@ label {
   text-transform: none;
   color: var(--rose);
   font-weight: 400;
-  font-style: italic;
   margin-bottom: 0.5rem;
 }
 input[type="text"],
@@ -490,7 +473,6 @@ textarea { resize: vertical; min-height: 95px; }
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
-  font-style: italic;
   letter-spacing: 0.02em;
   text-transform: none;
   color: var(--text-mid);
@@ -533,7 +515,6 @@ textarea { resize: vertical; min-height: 95px; }
   border-radius: 9px;
   color: var(--rose);
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -551,7 +532,6 @@ textarea { resize: vertical; min-height: 95px; }
   border: none;
   border-radius: 50px;
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -579,7 +559,6 @@ textarea { resize: vertical; min-height: 95px; }
 .ty-icon { font-size: 3.2rem; margin-bottom: 1rem; }
 .thank-you h3 {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 400;
   font-size: 1.9rem;
   color: var(--text);
@@ -596,7 +575,6 @@ footer {
 }
 .footer-names {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 400;
   font-size: 2.2rem;
   color: var(--sec-green-text);
@@ -612,7 +590,6 @@ footer {
 }
 footer p {
   font-size: 1rem;
-  font-style: italic;
   letter-spacing: 0.02em;
   color: var(--sec-green-sub);
 }
@@ -664,7 +641,6 @@ footer p {
 }
 .no-flowers-title {
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 400;
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: var(--sec-light-text);
@@ -829,7 +805,6 @@ body.intro-active { overflow: hidden; }
   border-radius: 14px;
   padding: 0.5rem 0.85rem;
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.55;
@@ -862,7 +837,6 @@ body.intro-active { overflow: hidden; }
 #click-hint {
   margin-top: 0.75rem;
   font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-size: 1rem;
   letter-spacing: 0.02em;
   text-transform: none;
