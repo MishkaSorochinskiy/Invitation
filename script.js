@@ -79,10 +79,26 @@ document.getElementById('addGuestBtn').addEventListener('click', () => {
   document.getElementById('guestNamesList').appendChild(makeGuestRow());
 });
 
-// ── AUTOFILL from ?id= URL param ──
+// ── AUTOFILL from path (/uuid) or ?id= param ──
 (function autofill() {
-  const id = new URLSearchParams(window.location.search).get('id');
+  let id = new URLSearchParams(window.location.search).get('id');
+  let fromPath = false;
+
+  if (!id) {
+    id = sessionStorage.getItem('__invite_id');
+    if (id) {
+      sessionStorage.removeItem('__invite_id');
+      fromPath = true;
+    }
+  }
+
   if (!id) return;
+
+  // Restore clean /Invitation/uuid URL in address bar
+  if (fromPath) {
+    const base = location.pathname.replace(/\/$/, '');
+    history.replaceState(null, '', base + '/' + id);
+  }
 
   fetch('guests.csv')
     .then(r => r.text())
