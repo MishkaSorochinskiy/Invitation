@@ -100,15 +100,44 @@ document.getElementById('addGuestBtn').addEventListener('click', () => {
     history.replaceState(null, '', base + '/' + id);
   }
 
+  function parseCSVLine(line) {
+    const cols = [];
+    let i = 0;
+    while (i < line.length) {
+      if (line[i] === '"') {
+        let val = ''; i++;
+        while (i < line.length) {
+          if (line[i] === '"' && line[i + 1] === '"') { val += '"'; i += 2; }
+          else if (line[i] === '"') { i++; break; }
+          else val += line[i++];
+        }
+        if (line[i] === ',') i++;
+        cols.push(val);
+      } else {
+        const end = line.indexOf(',', i);
+        if (end === -1) { cols.push(line.slice(i)); break; }
+        cols.push(line.slice(i, end));
+        i = end + 1;
+      }
+    }
+    return cols;
+  }
+
   fetch('guests.csv')
     .then(r => r.text())
     .then(csv => {
       const lines = csv.trim().split('\n').slice(1); // skip header
       for (const line of lines) {
-        const cols = line.split(',');
+        const cols = parseCSVLine(line);
         if (cols[0].trim() !== id) continue;
 
-        const names = cols.slice(1).map(n => n.trim()).filter(Boolean);
+        const message = cols[1]?.trim() || '';
+        if (message) {
+          const el = document.getElementById('guestMessage');
+          el.textContent = message;
+          el.style.display = '';
+        }
+        const names = cols.slice(2).map(n => n.trim()).filter(Boolean);
         const list = document.getElementById('guestNamesList');
         list.innerHTML = '';
         names.forEach(name => {
