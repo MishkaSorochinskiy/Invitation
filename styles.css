@@ -339,6 +339,14 @@ section {
   box-shadow: 0 8px 36px rgba(45,74,62,0.12);
 }
 .form-group { margin-bottom: 2.2rem; }
+.field-error {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: #c0392b;
+  letter-spacing: 0.03em;
+  min-height: 1em;
+}
 label {
   display: block;
   font-size: 0.72rem;
@@ -611,7 +619,7 @@ body.intro-active { overflow: hidden; }
 /* Postman group */
 #postman-group {
   position: absolute;
-  bottom: 55px;
+  bottom: 38px;
   transform: translateX(-300px);
   animation: postmanRide 2.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
@@ -759,7 +767,7 @@ body.intro-active { overflow: hidden; }
 
 /* ── INTRO MOBILE (≤480px) ── */
 @media (max-width: 480px) {
-  #postman-group { bottom: 48px; }
+  #postman-group { bottom: 46px; }
   #postman-svg   { width: 165px; }
   #envelope-svg  { width: 190px; }
   #click-hint    { font-size: 0.72rem; letter-spacing: 0.14em; }
