@@ -63,13 +63,6 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-// ── RSVP: show/hide guest names when declining ──
-document.querySelectorAll('input[name="attending"]').forEach(r => {
-  r.addEventListener('change', () => {
-    document.getElementById('guestNamesGroup').style.display =
-      r.value === 'no' ? 'none' : 'block';
-  });
-});
 
 // ── RSVP: dynamic guest name rows ──
 function makeGuestRow() {
@@ -86,21 +79,75 @@ document.getElementById('addGuestBtn').addEventListener('click', () => {
   document.getElementById('guestNamesList').appendChild(makeGuestRow());
 });
 
+// ── AUTOFILL from ?id= URL param ──
+(function autofill() {
+  const id = new URLSearchParams(window.location.search).get('id');
+  if (!id) return;
+
+  fetch('guests.csv')
+    .then(r => r.text())
+    .then(csv => {
+      const lines = csv.trim().split('\n').slice(1); // skip header
+      for (const line of lines) {
+        const cols = line.split(',');
+        if (cols[0].trim() !== id) continue;
+
+        const names = cols.slice(1).map(n => n.trim()).filter(Boolean);
+        const list = document.getElementById('guestNamesList');
+        list.innerHTML = '';
+        names.forEach(name => {
+          const row = makeGuestRow();
+          row.querySelector('.guest-name-input').value = name;
+          list.appendChild(row);
+        });
+        break;
+      }
+    })
+    .catch(() => {});
+})();
+
 // ── RSVP: form submit → Google Sheets ──
 // Replace SHEET_URL with your deployed Apps Script web app URL
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw0mBJqF5Odk96SU_zRREMIzZ5yfLR4_hSKW7rXSMLZ8rHu_6U5PZlJiEQAaQ_Q8jabPA/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxZA_AHu_JXvih4tz1PKUuxUMCsLkrzh5thK9oXf221OG8uGj8KKHzVUNZMvoHL3dZXjQ/exec';
+
+// ── RSVP: clear errors on interaction ──
+document.querySelectorAll('input[name="attending"]').forEach(r => {
+  r.addEventListener('change', () => {
+    document.getElementById('attendingError').textContent = '';
+  });
+});
+document.getElementById('guestNamesList').addEventListener('input', () => {
+  document.getElementById('guestsError').textContent = '';
+});
+document.getElementById('addGuestBtn').addEventListener('click', () => {
+  document.getElementById('guestsError').textContent = '';
+}, true);
 
 document.getElementById('rsvpForm').addEventListener('submit', async e => {
   e.preventDefault();
 
+  const attending = document.querySelector('input[name="attending"]:checked')?.value ?? '';
   const names = [...document.querySelectorAll('.guest-name-input')]
     .map(i => i.value.trim()).filter(Boolean);
 
+  let valid = true;
+
+  if (!attending) {
+    document.getElementById('attendingError').textContent = 'Будь ласка, оберіть варіант';
+    valid = false;
+  }
+
+  if (names.length === 0) {
+    document.getElementById('guestsError').textContent = 'Будь ласка, додайте хоча б одного гостя';
+    valid = false;
+  }
+
+  if (!valid) return;
+
   const payload = {
-    name:      document.getElementById('name').value.trim(),
-    attending: document.querySelector('input[name="attending"]:checked')?.value ?? '',
-    guests:    names.join(', '),
-    message:   document.getElementById('message').value.trim(),
+    attending,
+    guests:  names.join(', '),
+    message: document.getElementById('message').value.trim(),
   };
 
   if (SHEET_URL) {
