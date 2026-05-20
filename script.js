@@ -134,7 +134,7 @@ document.getElementById('addGuestBtn').addEventListener('click', () => {
         const message = cols[1]?.trim() || '';
         if (message) {
           const el = document.getElementById('guestMessage');
-          el.textContent = message;
+          el.innerHTML = message;
           el.style.display = '';
         }
         const names = cols.slice(2).map(n => n.trim()).filter(Boolean);
