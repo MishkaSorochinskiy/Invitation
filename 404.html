@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<script>
+  var base = '/Invitation/';
+  var uuid = window.location.pathname.slice(base.length).replace(/\/$/, '');
+  if (uuid) sessionStorage.setItem('__invite_id', uuid);
+  window.location.replace(window.location.origin + base);
+</script>
+</head><body></body></html>
