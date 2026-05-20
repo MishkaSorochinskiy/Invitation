@@ -155,7 +155,7 @@ section {
   font-size: clamp(1rem, 2.5vw, 1.35rem);
   color: var(--text-mid);
   letter-spacing: 0.14em;
-  margin-top: 1.2rem;
+  margin-top: 4rem;
   font-style: italic;
 }
 .hero-photo-wrap {
