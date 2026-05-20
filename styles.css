@@ -150,6 +150,14 @@ section {
   margin-top: 1rem;
   font-style: italic;
 }
+.hero-message {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: var(--text-mid);
+  letter-spacing: 0.14em;
+  margin-top: 1.2rem;
+  font-style: italic;
+}
 .hero-photo-wrap {
   margin-top: 1.4rem;
   border-radius: 18px;
