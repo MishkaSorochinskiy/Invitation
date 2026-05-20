@@ -133,9 +133,7 @@ document.getElementById('addGuestBtn').addEventListener('click', () => {
 
         const message = cols[1]?.trim() || '';
         if (message) {
-          const el = document.getElementById('guestMessage');
-          el.innerHTML = message;
-          el.style.display = '';
+          document.getElementById('guestMessage').innerHTML = message;
         }
         const names = cols.slice(2).map(n => n.trim()).filter(Boolean);
         const list = document.getElementById('guestNamesList');
