@@ -142,97 +142,90 @@
       <!-- Left shoe -->
       <path d="M124,108 Q131,104 139,109 Q140,116 134,117 Q126,116 124,112 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
 
-      <!-- ── TORSO / JACKET ── -->
-      <path d="M139,68 Q141,51 190,51 L191,68 Q167,76 148,79 Z" fill="url(#pgJacket)" stroke="#1a2e27" stroke-width="1.5"/>
-      <!-- Shadow side -->
-      <path d="M139,68 Q140,55 150,51 L152,53 Q142,61 144,72 Z" fill="#0f1e18" opacity="0.45"/>
-      <!-- Chest highlight -->
-      <path d="M170,51 Q183,50 191,54 L191,61 Q181,59 170,59 Z" fill="#3d6050" opacity="0.35"/>
+      <!-- ── TORSO / JACKET (upright, bigger, butt on saddle) ── -->
+      <path d="M128,72 Q116,68 118,60 Q120,54 128,55 L128,40 Q140,35 152,40 L152,72 Q140,76 128,72 Z" fill="url(#pgJacket)" stroke="#1a2e27" stroke-width="1.5"/>
+      <!-- Shadow side (left/back) -->
+      <path d="M128,72 Q118,68 120,60 Q122,56 128,57 L128,40 L132,40 L132,72 Z" fill="#0f1e18" opacity="0.4"/>
+      <!-- Chest highlight (right/front) -->
+      <path d="M143,42 Q148,42 151,44 L151,64 Q146,63 143,63 Z" fill="#3d6050" opacity="0.35"/>
       <!-- White collar -->
-      <path d="M159,51 Q162,46 168,50" fill="#f0ece4" stroke="#d4cec0" stroke-width="0.8"/>
-      <path d="M161,51 Q164,46 170,50" fill="none" stroke="#c8c0b0" stroke-width="1.2"/>
+      <path d="M135,40 Q140,36 145,40" fill="#f0ece4" stroke="#d4cec0" stroke-width="0.8"/>
+      <path d="M136,41 Q140,37 144,41" fill="none" stroke="#c8c0b0" stroke-width="1.2"/>
       <!-- Zipper line -->
-      <line x1="163" y1="51" x2="160" y2="72" stroke="#1a2e27" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.5"/>
+      <line x1="140" y1="42" x2="140" y2="72" stroke="#1a2e27" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.5"/>
       <!-- Buttons -->
-      <circle cx="163" cy="57" r="1.8" fill="#1a2e27"/>
-      <circle cx="162" cy="64" r="1.8" fill="#1a2e27"/>
+      <circle cx="140" cy="52" r="2" fill="#1a2e27"/>
+      <circle cx="140" cy="62" r="2" fill="#1a2e27"/>
       <!-- Chest pocket -->
-      <path d="M173,52 Q181,51 184,53 L184,60 Q181,61 173,60 Z" fill="none" stroke="#1a2e27" stroke-width="1" opacity="0.5"/>
-      <!-- Epaulette -->
-      <path d="M185,51 Q193,48 197,51 L195,56 Q189,55 184,56 Z" fill="#255040" stroke="#1a2e27" stroke-width="0.8"/>
+      <path d="M143,50 Q148,49 150,51 L150,58 Q147,59 143,58 Z" fill="none" stroke="#1a2e27" stroke-width="1" opacity="0.5"/>
+      <!-- Epaulette (right shoulder) -->
+      <path d="M147,40 Q152,38 154,41 L152,46 Q149,45 147,46 Z" fill="#255040" stroke="#1a2e27" stroke-width="0.8"/>
 
       <!-- ── NECK ── -->
-      <line x1="191" y1="56" x2="193" y2="63" stroke="#d4985c" stroke-width="6" stroke-linecap="round"/>
+      <line x1="140" y1="32" x2="140" y2="40" stroke="#d4985c" stroke-width="8" stroke-linecap="round"/>
 
-      <!-- ── RIGHT ARM (handlebar) ── -->
-      <line x1="189" y1="56" x2="218" y2="56" stroke="#2d4a3e" stroke-width="7"   stroke-linecap="round"/>
-      <line x1="189" y1="56" x2="216" y2="56" stroke="#1a2e27" stroke-width="3"   stroke-linecap="round" opacity="0.5"/>
-      <line x1="211" y1="54" x2="213" y2="58" stroke="#c9a570" stroke-width="1.5" opacity="0.8"/>
+      <!-- ── RIGHT ARM (hangs down) ── -->
+      <line x1="150" y1="44" x2="162" y2="68" stroke="#2d4a3e" stroke-width="8"   stroke-linecap="round"/>
+      <line x1="150" y1="44" x2="160" y2="66" stroke="#1a2e27" stroke-width="3"   stroke-linecap="round" opacity="0.5"/>
+      <line x1="158" y1="64" x2="162" y2="64" stroke="#c9a570" stroke-width="1.5" opacity="0.8"/>
       <!-- Hand -->
-      <ellipse cx="220" cy="57" rx="5.5" ry="4.5" fill="#d4985c" stroke="#b8784c" stroke-width="1"/>
-      <path d="M216,55 Q220,53 223,56" fill="none" stroke="#b8784c" stroke-width="1" opacity="0.6"/>
+      <ellipse cx="164" cy="71" rx="6" ry="5" fill="#d4985c" stroke="#b8784c" stroke-width="1"/>
 
       <!-- ── LEFT ARM (throwing) ── -->
       <g id="throw-arm" style="transform-box:view-box">
-        <line x1="182" y1="62" x2="158" y2="44" stroke="#2d4a3e" stroke-width="7"   stroke-linecap="round"/>
-        <line x1="182" y1="62" x2="160" y2="46" stroke="#1a2e27" stroke-width="3"   stroke-linecap="round" opacity="0.5"/>
-        <line x1="162" y1="45" x2="160" y2="49" stroke="#c9a570" stroke-width="1.5" opacity="0.8"/>
+        <line x1="130" y1="44" x2="106" y2="26" stroke="#2d4a3e" stroke-width="8"   stroke-linecap="round"/>
+        <line x1="130" y1="44" x2="108" y2="28" stroke="#1a2e27" stroke-width="3"   stroke-linecap="round" opacity="0.5"/>
+        <line x1="110" y1="27" x2="108" y2="31" stroke="#c9a570" stroke-width="1.5" opacity="0.8"/>
         <!-- Hand -->
-        <ellipse cx="156" cy="43" rx="5.5" ry="4.5" fill="#d4985c" stroke="#b8784c" stroke-width="1"/>
+        <ellipse cx="104" cy="25" rx="6" ry="5" fill="#d4985c" stroke="#b8784c" stroke-width="1"/>
         <!-- Small envelope in hand -->
         <g id="arm-envelope">
-          <rect x="141" y="35" width="22" height="15" rx="2" fill="#f5f0e8" stroke="#2d4a3e" stroke-width="1.8"/>
-          <polyline points="141,35 152,44 163,35" fill="none" stroke="#2d4a3e" stroke-width="1.2"/>
-          <line x1="141" y1="50" x2="152" y2="44" stroke="#c0b8a0" stroke-width="0.8" opacity="0.5"/>
-          <line x1="163" y1="50" x2="152" y2="44" stroke="#c0b8a0" stroke-width="0.8" opacity="0.5"/>
+          <rect x="89" y="17" width="22" height="15" rx="2" fill="#f5f0e8" stroke="#2d4a3e" stroke-width="1.8"/>
+          <polyline points="89,17 100,26 111,17" fill="none" stroke="#2d4a3e" stroke-width="1.2"/>
+          <line x1="89" y1="32" x2="100" y2="26" stroke="#c0b8a0" stroke-width="0.8" opacity="0.5"/>
+          <line x1="111" y1="32" x2="100" y2="26" stroke="#c0b8a0" stroke-width="0.8" opacity="0.5"/>
         </g>
       </g>
 
-      <!-- ── HEAD ── -->
-      <circle cx="196" cy="44" r="15" fill="url(#pgSkin)" stroke="#c8885a" stroke-width="1"/>
-      <!-- Ear -->
-      <ellipse cx="184" cy="46" rx="4" ry="5.5" fill="#d4985c" stroke="#b87840" stroke-width="1"/>
-      <path d="M184,42 Q187,46 184,50" fill="none" stroke="#a06030" stroke-width="1" stroke-linecap="round"/>
-      <!-- Jawline shadow -->
-      <path d="M192,57 Q197,61 202,59" fill="none" stroke="#b07030" stroke-width="1.5" opacity="0.35"/>
+      <!-- ── HEAD (front-facing) ── -->
+      <circle cx="140" cy="20" r="17" fill="url(#pgSkin)" stroke="#c8885a" stroke-width="1"/>
+      <!-- Left ear -->
+      <ellipse cx="124" cy="22" rx="4" ry="5.5" fill="#d4985c" stroke="#b87840" stroke-width="1"/>
+      <path d="M124,18 Q127,22 124,26" fill="none" stroke="#a06030" stroke-width="1" stroke-linecap="round"/>
+      <!-- Right ear -->
+      <ellipse cx="156" cy="22" rx="4" ry="5.5" fill="#d4985c" stroke="#b87840" stroke-width="1"/>
+      <path d="M156,18 Q153,22 156,26" fill="none" stroke="#a06030" stroke-width="1" stroke-linecap="round"/>
 
-      <!-- ── CAP ── -->
-      <path d="M182,43 Q183,25 200,24 Q213,25 213,38 Q212,43 210,44 Z" fill="#2d4a3e" stroke="#1a2e27" stroke-width="1.2"/>
-      <!-- Cap seams -->
-      <path d="M184,37 Q192,30 208,35" fill="none" stroke="#1a2e27" stroke-width="0.9" opacity="0.45"/>
-      <path d="M192,25 Q199,22 206,25" fill="none" stroke="#1a2e27" stroke-width="0.8" opacity="0.35"/>
+      <!-- ── CAP (front-facing) ── -->
+      <path d="M122,20 Q122,3 140,2 Q158,3 158,20 Z" fill="#2d4a3e" stroke="#1a2e27" stroke-width="1.2"/>
+      <!-- Cap top seam -->
+      <path d="M130,5 Q140,3 150,5" fill="none" stroke="#1a2e27" stroke-width="0.9" opacity="0.4"/>
       <!-- Top button -->
-      <circle cx="199" cy="25" r="2.5" fill="#c9a570" stroke="#a07030" stroke-width="0.8"/>
-      <!-- Gold band -->
-      <line x1="182" y1="44" x2="211" y2="44" stroke="#c9a570" stroke-width="2.5"/>
-      <!-- Visor -->
-      <path d="M209,43 Q217,42 219,45 Q216,49 209,47 Z" fill="#1a2e27" stroke="#111" stroke-width="0.8"/>
-      <path d="M209,43 Q217,42 219,45" fill="none" stroke="#2d4a3e" stroke-width="1" opacity="0.5"/>
+      <circle cx="140" cy="3" r="2.8" fill="#c9a570" stroke="#a07030" stroke-width="0.8"/>
+      <!-- Visor (front, shallow brim) -->
+      <path d="M122,20 Q140,23 158,20 L158,21 Q140,24 122,21 Z" fill="#1a2e27" stroke="#111" stroke-width="0.8"/>
 
-      <!-- ── FACE ── -->
-      <!-- Eyebrow -->
-      <path d="M199,39 Q205,36 210,37" fill="none" stroke="#5a2808" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Eye (almond) -->
-      <ellipse cx="205" cy="43" rx="4" ry="3" fill="white" stroke="#c09070" stroke-width="0.5"/>
-      <!-- Iris -->
-      <circle cx="206" cy="43" r="2.3" fill="#4a3020"/>
-      <!-- Pupil -->
-      <circle cx="206.5" cy="43" r="1.3" fill="#180800"/>
-      <!-- Glint -->
-      <circle cx="207.2" cy="42" r="0.75" fill="white"/>
-      <!-- Eyelid -->
-      <path d="M201,41 Q205,39 209,41" fill="none" stroke="#b08060" stroke-width="0.8" opacity="0.6"/>
-      <!-- Lower lid -->
-      <path d="M201,45 Q205,46.5 209,45" fill="none" stroke="#c09070" stroke-width="0.6" opacity="0.4"/>
-      <!-- Nose profile -->
-      <path d="M210,46 Q215,49 213,54" fill="none" stroke="#c07840" stroke-width="2"   stroke-linecap="round"/>
-      <path d="M211,54 Q213,56 215,54" fill="none" stroke="#b06830" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- ── FACE (front-facing) ── -->
+      <!-- Eyebrows -->
+      <path d="M129,16 Q134,13 139,16" fill="none" stroke="#5a2808" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M141,16 Q146,13 151,16" fill="none" stroke="#5a2808" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Left eye -->
+      <ellipse cx="134" cy="21" rx="3.5" ry="2.8" fill="white" stroke="#3a2010" stroke-width="0.7"/>
+      <circle cx="134" cy="21" r="2" fill="#4a3020"/>
+      <circle cx="134" cy="21" r="1" fill="#180800"/>
+      <circle cx="134.5" cy="20.3" r="0.6" fill="white"/>
+      <!-- Right eye -->
+      <ellipse cx="146" cy="21" rx="3.5" ry="2.8" fill="white" stroke="#3a2010" stroke-width="0.7"/>
+      <circle cx="146" cy="21" r="2" fill="#4a3020"/>
+      <circle cx="146" cy="21" r="1" fill="#180800"/>
+      <circle cx="146.5" cy="20.3" r="0.6" fill="white"/>
+      <!-- Nose -->
+      <path d="M137,28 Q140,31 143,28" fill="none" stroke="#b07840" stroke-width="1.6" stroke-linecap="round"/>
       <!-- Mouth -->
-      <path d="M204,54 Q209,58 213,56" fill="none" stroke="#a05040" stroke-width="2.2" stroke-linecap="round"/>
-      <!-- Upper lip hint -->
-      <path d="M203,53 Q208,51 213,53" fill="none" stroke="#b86858" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
-      <!-- Cheek blush -->
-      <ellipse cx="209" cy="50" rx="5" ry="3" fill="#d06050" opacity="0.10"/>
+      <path d="M134,33 Q140,37 146,33" fill="none" stroke="#a05040" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Cheeks blush -->
+      <ellipse cx="130" cy="28" rx="3" ry="2" fill="#d06050" opacity="0.18"/>
+      <ellipse cx="150" cy="28" rx="3" ry="2" fill="#d06050" opacity="0.18"/>
     </svg>
   </div>
 
@@ -335,7 +328,7 @@
   <a href="#details">Деталі</a>
   <a href="#timeline">Розклад</a>
   <a href="#location">Місце</a>
-  <a href="#rsvp">ФОРМА</a>
+  <a href="#rsvp">Форма</a>
 </nav>
 
 
@@ -468,6 +461,7 @@
         <div class="tl-card">
           <div class="tl-time">16:00</div>
           <div class="tl-event">Святковий бенкет</div>
+          <div class="tl-desc">Нарешті можна поїсти</div>
         </div>
       </div>
 
@@ -476,6 +470,7 @@
         <div class="tl-card">
           <div class="tl-time">17:30</div>
           <div class="tl-event">Перший танець</div>
+          <div class="tl-desc">Запускаємо танцювальний марафон</div>
         </div>
       </div>
 
@@ -484,6 +479,7 @@
         <div class="tl-card">
           <div class="tl-time">20:30</div>
           <div class="tl-event">Тортик</div>
+          <div class="tl-desc">Солодкі моменти та ще більше емоцій</div>
         </div>
       </div>
 
@@ -584,8 +580,7 @@
         <path d="M6 20 C 9 14, 13 9, 19 5" fill="none" stroke="#2E4A2E" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
     </div>
-    <h3 class="no-flowers-title">Будь ласка, не даруйте квіти</h3>
-    <p class="no-flowers-sub">вашої присутності достатньо, щоб зробити цей день незабутнім</p>
+    <h3 class="no-flowers-title">Просимо не дарувати квіти — краще щось, що ми зможемо відкрити, з'їсти, прочитати або згадати через роки</h3>
     <div class="no-flowers-arrow" aria-hidden="true">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 4 V 20 M5 13 L 12 20 L 19 13" stroke="#2E4A2E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
