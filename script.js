@@ -69,7 +69,7 @@ function makeGuestRow() {
   const row = document.createElement('div');
   row.className = 'guest-name-row';
   row.innerHTML = `
-    <input type="text" class="guest-name-input" placeholder="Ім'я та прізвище">
+    <input type="text" class="guest-name-input" placeholder="Ім'я та прізвище" autocomplete="off" autocorrect="off" autocapitalize="words" spellcheck="false" name="guest-${Date.now()}-${Math.random().toString(36).slice(2, 8)}">
     <button type="button" class="btn-remove-guest" aria-label="Видалити">×</button>`;
   row.querySelector('.btn-remove-guest').addEventListener('click', () => row.remove());
   return row;
