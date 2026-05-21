@@ -755,9 +755,9 @@ body.intro-active { overflow: hidden; }
 .wheel  { animation: spinWheel   0.45s linear infinite; }
 .pedal  { animation: pedalRotate 0.9s  linear infinite; }
 
-/* Throwing arm — origin at shoulder joint (182,62) in 300×185 viewBox */
+/* Throwing arm — origin at shoulder joint (130,44) in 300×185 viewBox */
 #throw-arm {
-  transform-origin: 182px 62px;
+  transform-origin: 130px 44px;
   transform-box: view-box;
   transition: transform 0.22s ease-in;
 }
