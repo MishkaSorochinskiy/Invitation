@@ -151,13 +151,33 @@ document.getElementById('addGuestBtn').addEventListener('click', () => {
 
 // ── RSVP: form submit → Google Sheets ──
 // Replace SHEET_URL with your deployed Apps Script web app URL
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxZA_AHu_JXvih4tz1PKUuxUMCsLkrzh5thK9oXf221OG8uGj8KKHzVUNZMvoHL3dZXjQ/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyt7VK7bbZ-rsb3BU1f-ZOEuTBjY_8-XscXhNowH5j4PKi08dO5MBDrG7Te4z2l9GTSAw/exec';
 
-// ── RSVP: clear errors on interaction ──
+// ── RSVP: conditional transfer question + clear errors on interaction ──
+const transferGroup  = document.getElementById('transferGroup');
+const transferError  = document.getElementById('transferError');
+const transferInputs = document.querySelectorAll('input[name="transfer"]');
+
+function setTransferVisible(visible) {
+  if (visible) {
+    transferGroup.classList.add('is-visible');
+    transferGroup.setAttribute('aria-hidden', 'false');
+  } else {
+    transferGroup.classList.remove('is-visible');
+    transferGroup.setAttribute('aria-hidden', 'true');
+    transferInputs.forEach(i => { i.checked = false; });
+    transferError.textContent = '';
+  }
+}
+
 document.querySelectorAll('input[name="attending"]').forEach(r => {
   r.addEventListener('change', () => {
     document.getElementById('attendingError').textContent = '';
+    setTransferVisible(r.value === 'yes' && r.checked);
   });
+});
+transferInputs.forEach(r => {
+  r.addEventListener('change', () => { transferError.textContent = ''; });
 });
 document.getElementById('guestNamesList').addEventListener('input', () => {
   document.getElementById('guestsError').textContent = '';
@@ -170,6 +190,7 @@ document.getElementById('rsvpForm').addEventListener('submit', async e => {
   e.preventDefault();
 
   const attending = document.querySelector('input[name="attending"]:checked')?.value ?? '';
+  const transfer  = document.querySelector('input[name="transfer"]:checked')?.value ?? '';
   const names = [...document.querySelectorAll('.guest-name-input')]
     .map(i => i.value.trim()).filter(Boolean);
 
@@ -177,6 +198,11 @@ document.getElementById('rsvpForm').addEventListener('submit', async e => {
 
   if (!attending) {
     document.getElementById('attendingError').textContent = 'Будь ласка, оберіть варіант';
+    valid = false;
+  }
+
+  if (attending === 'yes' && !transfer) {
+    transferError.textContent = 'Будь ласка, оберіть варіант';
     valid = false;
   }
 
@@ -189,8 +215,9 @@ document.getElementById('rsvpForm').addEventListener('submit', async e => {
 
   const payload = {
     attending,
-    guests:  names.join(', '),
-    message: document.getElementById('message').value.trim(),
+    guests:   names.join(', '),
+    transfer,
+    message:  document.getElementById('message').value.trim(),
   };
 
   if (SHEET_URL) {
