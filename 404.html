@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <script>
-  var base = '/Invitation/';
-  var uuid = window.location.pathname.slice(base.length).replace(/\/$/, '');
+  var segments = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+  var uuid = segments.pop() || '';
+  var base = segments.length ? '/' + segments.join('/') + '/' : '/';
   if (uuid) sessionStorage.setItem('__invite_id', uuid);
   window.location.replace(window.location.origin + base);
 </script>
